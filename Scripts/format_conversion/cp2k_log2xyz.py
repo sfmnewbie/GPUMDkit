@@ -154,7 +154,7 @@ def extract_stress_gpa(log):
         if len(matches) >= 3:
             stress_bar = [float(v) for row in matches[:3] for v in row]
             # Convert bar to GPa: 1 bar = 0.1 GPa
-            return [s * 0.1 for s in stress_bar]
+            return [s * 1e-4 for s in stress_bar]
     
     return None
 
